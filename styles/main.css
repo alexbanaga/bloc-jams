@@ -9,6 +9,14 @@ html {
   font-size: 100%;
 }
 
+.clearfix::after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
 body {
   font-family: 'Open Sans';
   color: white;
