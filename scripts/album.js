@@ -28,6 +28,21 @@ var albumMarconi = {
   ]
 };
 
+var albumKanye = {
+  title: 'College Dropout',
+  artist: 'Kanye WEst',
+  label: 'R&B',
+  year: '2001',
+  albumArtUrl: 'assets/images/album_covers/15.png',
+  songs: [
+    { title: 'Rolling in the Deep', duration: '4:12' },
+    { title: 'Homecoming', duration: '4:23' },
+    { title: 'Runaway', duration: '2:33' },
+    { title: 'Wake Up Mr West', duration: '5:01' },
+    { title: 'I Wonder', duration: '4:47' }
+  ]
+};
+
 var createSongRow = function(songNumber, songName, songLength) {
   var template =
   '<tr class="album-view-song-item">'
@@ -40,13 +55,13 @@ var createSongRow = function(songNumber, songName, songLength) {
   return template;
 };
 
-var setCurrentAlbum = function(album) {
-  var albumTitle = document.getElementsByClassName('album-view-title')[0];
-  var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-  var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-  var albumImage = document.getElementsByClassName('album-cover-art')[0];
-  var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+var albumTitle = document.getElementsByClassName('album-view-title')[0];
+var albumArtist = document.getElementsByClassName('album-view-artist')[0];
+var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+var albumImage = document.getElementsByClassName('album-cover-art')[0];
+var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
 
+var setCurrentAlbum = function(album) {
   albumTitle.firstChild.nodeValue = album.title;
   albumArtist.firstChild.nodeValue = album.year + ' ' + album.label;
   albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
@@ -61,4 +76,14 @@ var setCurrentAlbum = function(album) {
 
 window.onload = function()  {
   setCurrentAlbum(albumPicasso);
+
+  var albums = [albumPicasso, albumMarconi, albumKanye];
+  var index = 1;
+  albumImage.addEventListener("click", function(event) {
+      setCurrentAlbum(albums[index]);
+      index++;
+      if (index == albums.length) {
+        index = 0;
+      }
+  });
 };
