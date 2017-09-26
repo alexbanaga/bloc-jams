@@ -1,4 +1,4 @@
-var pointsArray = document.getElementsByClassName('point');
+var animatePoints = document.getElementsByClassName('point');
 
 var revealPoint = function(point) {
   point.style.opacity = 1;
@@ -12,8 +12,8 @@ var animatePoints = function(points) {
 };
 
 window.onload = function() {
-
-  if(window.innerHeight > 950){
+  
+  if (window.innerHeight > 450){
     animatePoints(pointsArray);
   }
 
