@@ -34,9 +34,10 @@ body.album {
   font-size: 0.75rem;
 }
 
-.album-view-song-item {
+tr.album-view-song-item td {
    height: 3rem;
   border-bottom: 1px solid rgba(255,255,255,0.5);
+  margin-left: -1px !important; 
 }
 
 .song-item-number {
