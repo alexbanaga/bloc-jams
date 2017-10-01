@@ -4,6 +4,7 @@ body.album {
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
+  padding-bottom: 200px;
 }
 
 .album-cover-art {
@@ -37,7 +38,7 @@ body.album {
 tr.album-view-song-item td {
    height: 3rem;
   border-bottom: 1px solid rgba(255,255,255,0.5);
-  margin-left: -1px !important; 
+  margin-left: -1px !important;
 }
 
 .song-item-number {
